@@ -1,9 +1,10 @@
 // Assignment code here
 const generatePassword = () => {
-  const pswdLength = prompt("How long do you want your password? Type in a whole number between 8 and 128.");
-  // while (pswdLength === isNaN) {
-  //   prompt("That is not a number, please enter a whole number between 8 and 128");
-  // }
+  let pswdLength = prompt("How long do you want your password? Type in a whole number between 8 and 128.");
+  while (isNaN(pswdLength)) {
+    console.log(typeof (pswdLength))
+    pswdLength = prompt("That is not a number, please enter a whole number between 8 and 128");
+  }
   const lwrcase = confirm("Do you need lowercase letters? 'ok' for yes, 'cancel' for no.");
   const uppercase = confirm("Do you need uppercase letters? 'ok' for yes, 'cancel' for no.");
   const numbers = confirm("Do you need numbers? 'ok' for yes, 'cancel' for no.");
