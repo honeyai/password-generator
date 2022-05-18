@@ -5,6 +5,9 @@ const generatePassword = () => {
     console.log(typeof (pswdLength))
     pswdLength = prompt("That is not a number, please enter a whole number between 8 and 128");
   }
+  while (pswdLength < 8 || pswdLength > 128) {
+    pswdLength = pswdLength > 128 ? prompt("That number is over 128. Write a number between 8 and 128.") : prompt("That number is less than 8. Write a number between 8 and 128.");
+  }
   const lwrcase = confirm("Do you need lowercase letters? 'ok' for yes, 'cancel' for no.");
   const uppercase = confirm("Do you need uppercase letters? 'ok' for yes, 'cancel' for no.");
   const numbers = confirm("Do you need numbers? 'ok' for yes, 'cancel' for no.");
