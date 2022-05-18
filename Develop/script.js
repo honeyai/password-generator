@@ -1,5 +1,16 @@
 // Assignment code here
+const generatePassword = () => {
+  const pswdLength = prompt("How long do you want your password? Type in a whole number between 8 and 128.");
+  // while (pswdLength === isNaN) {
+  //   prompt("That is not a number, please enter a whole number between 8 and 128");
+  // }
+  const lwrcase = confirm("Do you need lowercase letters? 'ok' for yes, 'cancel' for no.");
+  const uppercase = confirm("Do you need uppercase letters? 'ok' for yes, 'cancel' for no.");
+  const numbers = confirm("Do you need numbers? 'ok' for yes, 'cancel' for no.");
+  const spclchar = confirm("Do you need special characters? 'ok' for yes, 'cancel' for no.");
 
+  console.log(pswdLength, lwrcase, uppercase, numbers, spclchar)
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
