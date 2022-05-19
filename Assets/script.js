@@ -3,7 +3,10 @@ const generatePassword = () => {
   let password = "";
   let characters = "abcdefghijklmnopqrstuvwxyz";
   let special = "!#$%'()*+,-./:;<=>?@[]^_`{|}~";
+  const rand = (length) => Math.floor(Math.random() * length);
+
   let pswdLength = prompt("How long do you want your password? Type in a whole number between 8 and 128.");
+
   while (isNaN(pswdLength)) {
     console.log(typeof (pswdLength))
     pswdLength = prompt("That is not a number, please enter a whole number between 8 and 128");
@@ -11,11 +14,19 @@ const generatePassword = () => {
   while (pswdLength < 8 || pswdLength > 128) {
     pswdLength = pswdLength > 128 ? prompt("That number is over 128. Write a number between 8 and 128.") : prompt("That number is less than 8. Write a number between 8 and 128.");
   }
+
   const lwrcase = confirm("Do you need lowercase letters? 'ok' for yes, 'cancel' for no.");
   const uppercase = confirm("Do you need uppercase letters? 'ok' for yes, 'cancel' for no.");
-  const numbers = confirm("Do you need numbers? 'ok' for yes, 'cancel' for no.");
+  
+  // while(!uppercase && !lwrcase) {
+  //   alert("You must choose at least one of the following: Uppercase or Lowercase.");
+  //   lwrcase = confirm("Do you need lowercase letters? 'ok' for yes, 'cancel' for no.");
+  //   uppercase = confirm("Do you need uppercase letters? 'ok' for yes, 'cancel' for no.");
+  // }
+  
   const spclchar = confirm("Do you need special characters? 'ok' for yes, 'cancel' for no.");
-  const rand = (length) => Math.floor(Math.random() * length)
+  const numbers = confirm("Do you need numbers? 'ok' for yes, 'cancel' for no.");
+
   while (password.length < pswdLength) {
     if (uppercase) {
       password += characters[rand(characters.length)].toUpperCase();
@@ -31,7 +42,7 @@ const generatePassword = () => {
     }
   }
   console.log(pswdLength, lwrcase, uppercase, numbers, spclchar);
-  console.log(password)
+  console.log(password);
   return password
 }
 
